@@ -1,6 +1,9 @@
 import random
 
-while True:
+user = 0
+ai = 0
+
+while user < 5:
     a = input('камень, ножницы, бумага :')
     b = random.randint(1, 3)
     c = ''
@@ -12,21 +15,27 @@ while True:
         c = 'бумага'
     if a == c:
         print(f'{c}: ничья, пробуй еще раз')
+
     elif a == 'камень' and c == 'ножницы':
-        print(f'{c} ты победил!')
-        # break
+        user = user + 1
+        print(f'{c} ты победил!, user-{user}: ai-{ai}')
+
     elif a == 'камень' and c == 'бумага':
-        print(f'{c} ты проиграл!')
-        # break
+        ai = ai + 1
+        print(f'{c} ты проиграл!, user-{user}: ai-{ai}')
+
     elif a == 'ножницы' and c == 'камень':
-        print(f'{c} ты проиграл!')
-        # break
+        ai = ai +  1
+        print(f'{c} ты проиграл!, user-{user}: ai-{ai}')
+
     elif a == 'ножницы' and c == 'бумага':
-        print(f'{c} ты выиграл!')
-        # break
+        user = user + 1
+        print(f'{c} ты выиграл!, user-{user}: ai-{ai}')
+
     elif a == 'бумага' and c == 'камень':
-        print(f'{c} ты выиграл!')
-        # break
+        user = user + 1
+        print(f'{c} ты выиграл!, user-{user}: ai-{ai}')
+
     elif a == 'бумага' and c == 'ножницы':
-        print(f'{c} ты проиграл!')
-        # break
+        ai = ai + 1
+        print(f'{c} ты проиграл!, user-{user}: ai-{ai}')
